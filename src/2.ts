@@ -20,7 +20,7 @@ class Employee {
   constructor(public name: string, private department: string, protected salary: number) {
   }
 
-  getEmployeeDetails(): string | number {
+  getEmployeeDetails(): string {
     return `Name: ${this.name}, Department: ${this.department}, Salary: ${this.salary}`;
   }
 }

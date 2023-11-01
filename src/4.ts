@@ -20,9 +20,9 @@ class Person {
 }
 
 abstract class House {
-    door: false;
-    key: Key;
-    tenants: Person[] = [];
+    private door: boolean = false;
+    public key: Key;
+    private tenants: Person[] = [];
 
     constructor(key: Key) {
         this.key = key;
@@ -39,6 +39,7 @@ abstract class House {
 class MyHouse extends House {
     public openDoor(key: Key): void {
         if (key.getSignature() === this.key.getSignature()) {
+            // this.door = true;
             console.log('The door is now open.');
         } else {
             console.log('Invalid key. Cannot open the door.');
